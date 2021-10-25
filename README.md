@@ -88,6 +88,8 @@ An app that allows users to add members to a group, create shared grocery lists,
 <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
+![Grocery List](https://user-images.githubusercontent.com/88288108/138754194-97716823-2abe-4a4d-8d7e-05694fd00b12.png)
+
 
 ### [BONUS] Interactive Prototype
 
