@@ -48,20 +48,20 @@ An app that allows users to add members to a group, create shared grocery lists,
    * When opening the app for the first time, the user needs to choose to either login to an existing account or sign-up for a new account.
 * Personal Profile Screen
    * User will see their profile picture, name, groups they are in, have the option to add a group, and see what groups they are invited to.
-   *When user clicks on a specific group, they are taken to another screen:Individual Group View
-     *In individual Group View, the user can see the members of a specific group and has the option to add members
+   * When user clicks on a specific group, they are taken to another screen:Individual Group View
+     * In individual Group View, the user can see the members of a specific group and has the option to add members
 * My Lists Screen
-   *User sees the lists they are a part of, has the option to create a new list.
-   *When user clicks on a specific list they are taken to the Specific List View screen
-      *User has the ability to see what needs to be bought, what has already been picked up, and can move things from one side to the other. User can also add items to the list
+   * User sees the lists they are a part of, has the option to create a new list.
+   * When user clicks on a specific list they are taken to the Specific List View screen
+      * User has the ability to see what needs to be bought, what has already been picked up, and can move things from one side to the other. User can also add items to the list
    
 * Share/Find Recipes (Optional)
-   *User can see recipes other users have shared, the rating recipes have recieved, as well as share their own recipe
-   *Ingredients View
-      *Shows necessary ingredients for a recipe and gives the user the option to add ingredients to a specifc list
-        *The user gets a drop-down option of which list to add it to as well as the option to create a new list
+   * User can see recipes other users have shared, the rating recipes have recieved, as well as share their own recipe
+   * Ingredients View
+      * Shows necessary ingredients for a recipe and gives the user the option to add ingredients to a specifc list
+        * The user gets a drop-down option of which list to add it to as well as the option to create a new list
 * Settings Screen
-   *Allows the user to change their profile name, password, image, and viewing mode  
+   * Allows the user to change their profile name, password, image, and viewing mode  
 * Messaging Screen (optional)
    * Allows the user to direclty message other users of the app 
 
@@ -76,6 +76,7 @@ An app that allows users to add members to a group, create shared grocery lists,
 **Optional Navigation**
 * Shared Recipes
 * Direct Messaging
+
 **Flow Navigation** (Screen to Screen)
 
 * Login/Signup -> After successful login, user is taken to My Profile Screen with tab bar at the bottom
