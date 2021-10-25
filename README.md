@@ -78,7 +78,7 @@ An app that allows users to add members to a group, create shared grocery lists,
 * Direct Messaging
 **Flow Navigation** (Screen to Screen)
 
-* Login/Signup -> After successful sogin user is taken to My Profile Screen with tab bar at the bottom
+* Login/Signup -> After successful login, user is taken to My Profile Screen with tab bar at the bottom
 * My Profile -> Individual Group View
 * Shared Recipes-> Ratings Section and Recipe View -> Drop down view of lists
 * Messaging Screen -> Individual Direct Messages
