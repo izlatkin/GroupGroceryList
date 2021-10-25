@@ -84,8 +84,8 @@ An app that allows users to add members to a group, create shared grocery lists,
 * Messaging Screen -> Individual Direct Messages
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+[Paper_wireframe.pdf](https://github.com/izlatkin/GroupGroceryList/files/7412876/Paper_wireframe.pdf)
+
 
 ### [BONUS] Digital Wireframes & Mockups
 ![Grocery List](https://user-images.githubusercontent.com/88288108/138754194-97716823-2abe-4a4d-8d7e-05694fd00b12.png)
