@@ -117,6 +117,41 @@ An app that allows users to add members to a group, create shared grocery lists,
 | ProfileImage     | File          | Profile picture of account |
 
 ### Networking
-- [Add list of network requests by screen ]
+* Login Screen
+  * (Create) Create a new account when user signs up
+  * (Read/Get) Find user's account when user signs in
+* My Profile Screen
+  * (Read/Get) Get user's information (name and profile picture)
+  * (Read/Get) Get user's existing groups and lists
+  * (Read/Get) Get invites sent to user
+  * (Update) Update invites sent to user
+  * (Update) Existing groups and lists
+  * (Create) Create new groups
+  * (Delete) Delete existing groups
+* My Lists
+  * (Read/Get) Get user's existing lists
+  * (Create) Create new lists
+  * (Update) Add and change items on lists
+  * (Read/Get) Get group members for each list
+* Settings
+  * (Read/Get) Get user's information (name and profile picture)
+  * (Update) Update user's name
+  * (Update) Get user's profile picture
+  * (Update) Update user's username and password
+  * (Read/Get) Get user's username and password
+  * (Read/Get) Get user's selected viewing mode
+  * (Update) Update user's selected viewing mode
+  * (Delete) Delete User's profile
+* Shared Recipes
+  * (Read/Get) Get shared user recipes
+  * (Update) Update shared user recipes
+  * (Create) Create new user recipes
+  * (Delete) Delete shared recipes
+* Direct Messaging
+  * (Read/Get) Get messages
+  * (Update) Update sent and recieved messages
+  * (Create) Create new messages
+  * (Delete) Delete sent messages
+  * (Read/Get) Get user name and pictures for sender and receiver
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
