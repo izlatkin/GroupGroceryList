@@ -35,7 +35,6 @@ An app that allows users to add members to a group, create shared grocery lists,
 * As user shops, can move collected items to a separate list to differentiate between items that still need to be collected.
  
 
-
 **Optional Nice-to-have Stories**
 
 * Direct messaging features
