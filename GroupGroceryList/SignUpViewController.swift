@@ -11,7 +11,9 @@ import Parse
 
 class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    var choseimage=false
+    
+    
+    
     let user = PFUser()
     
     
@@ -72,7 +74,6 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         let scaledimage=image.af_imageScaled(to: size)
         
         ivProfilePic.image=scaledimage
-        choseimage=true
         
         let imagedata=ivProfilePic.image!.pngData()
         let file=PFFileObject(name: "image.png", data: imagedata!)
