@@ -10,7 +10,6 @@
 		227C836A573D833D669D0BB3 /* Pods_GroupGroceryList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE7414D845F2CEF5DF80EB3 /* Pods_GroupGroceryList.framework */; };
 		295D1F31272073AD00D23887 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295D1F30272073AD00D23887 /* AppDelegate.swift */; };
 		295D1F33272073AD00D23887 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295D1F32272073AD00D23887 /* SceneDelegate.swift */; };
-		295D1F35272073AD00D23887 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295D1F34272073AD00D23887 /* ViewController.swift */; };
 		295D1F38272073AD00D23887 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 295D1F36272073AD00D23887 /* Main.storyboard */; };
 		295D1F3A272073B900D23887 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 295D1F39272073B900D23887 /* Assets.xcassets */; };
 		295D1F3D272073B900D23887 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 295D1F3B272073B900D23887 /* LaunchScreen.storyboard */; };
@@ -20,6 +19,9 @@
 		B39E9DA496BADF2607114357 /* Pods_GroupGroceryList_GroupGroceryListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7924DABAD258C617DEB2D53C /* Pods_GroupGroceryList_GroupGroceryListUITests.framework */; };
 		D26B02A32734AE0D006616D3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B02A22734AE0D006616D3 /* LoginViewController.swift */; };
 		D26B02A52734C1EB006616D3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B02A42734C1EB006616D3 /* SignUpViewController.swift */; };
+		D26B02A72735F5A6006616D3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B02A62735F5A6006616D3 /* HomeViewController.swift */; };
+		D26B02A927360540006616D3 /* AddUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B02A827360540006616D3 /* AddUserController.swift */; };
+		D26B02AB27361450006616D3 /* EachUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B02AA27361450006616D3 /* EachUserCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +47,6 @@
 		295D1F2D272073AD00D23887 /* GroupGroceryList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupGroceryList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		295D1F30272073AD00D23887 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		295D1F32272073AD00D23887 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		295D1F34272073AD00D23887 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		295D1F37272073AD00D23887 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		295D1F39272073B900D23887 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		295D1F3C272073B900D23887 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,6 +64,9 @@
 		9A84E3A4424109363DAF3FA7 /* Pods-GroupGroceryList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroupGroceryList.release.xcconfig"; path = "Target Support Files/Pods-GroupGroceryList/Pods-GroupGroceryList.release.xcconfig"; sourceTree = "<group>"; };
 		D26B02A22734AE0D006616D3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D26B02A42734C1EB006616D3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		D26B02A62735F5A6006616D3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D26B02A827360540006616D3 /* AddUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserController.swift; sourceTree = "<group>"; };
+		D26B02AA27361450006616D3 /* EachUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EachUserCell.swift; sourceTree = "<group>"; };
 		EC43E19948F6C38E71D8AB4D /* Pods-GroupGroceryListTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroupGroceryListTests.release.xcconfig"; path = "Target Support Files/Pods-GroupGroceryListTests/Pods-GroupGroceryListTests.release.xcconfig"; sourceTree = "<group>"; };
 		FDE7414D845F2CEF5DF80EB3 /* Pods_GroupGroceryList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GroupGroceryList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -123,12 +127,14 @@
 				295D1F30272073AD00D23887 /* AppDelegate.swift */,
 				D26B02A22734AE0D006616D3 /* LoginViewController.swift */,
 				295D1F32272073AD00D23887 /* SceneDelegate.swift */,
-				295D1F34272073AD00D23887 /* ViewController.swift */,
 				295D1F36272073AD00D23887 /* Main.storyboard */,
+				D26B02A827360540006616D3 /* AddUserController.swift */,
+				D26B02A62735F5A6006616D3 /* HomeViewController.swift */,
 				295D1F39272073B900D23887 /* Assets.xcassets */,
 				295D1F3B272073B900D23887 /* LaunchScreen.storyboard */,
 				295D1F3E272073B900D23887 /* Info.plist */,
 				D26B02A42734C1EB006616D3 /* SignUpViewController.swift */,
+				D26B02AA27361450006616D3 /* EachUserCell.swift */,
 			);
 			path = GroupGroceryList;
 			sourceTree = "<group>";
@@ -412,10 +418,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D26B02A72735F5A6006616D3 /* HomeViewController.swift in Sources */,
 				D26B02A32734AE0D006616D3 /* LoginViewController.swift in Sources */,
-				295D1F35272073AD00D23887 /* ViewController.swift in Sources */,
 				295D1F31272073AD00D23887 /* AppDelegate.swift in Sources */,
 				295D1F33272073AD00D23887 /* SceneDelegate.swift in Sources */,
+				D26B02A927360540006616D3 /* AddUserController.swift in Sources */,
+				D26B02AB27361450006616D3 /* EachUserCell.swift in Sources */,
 				D26B02A52734C1EB006616D3 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
