@@ -22,6 +22,8 @@
 		D26B02A72735F5A6006616D3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B02A62735F5A6006616D3 /* HomeViewController.swift */; };
 		D26B02A927360540006616D3 /* AddUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B02A827360540006616D3 /* AddUserController.swift */; };
 		D26B02AB27361450006616D3 /* EachUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B02AA27361450006616D3 /* EachUserCell.swift */; };
+		D26B02AD2736FA78006616D3 /* CreateListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B02AC2736FA78006616D3 /* CreateListViewController.swift */; };
+		D26B02AF2737436F006616D3 /* EachAddedUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B02AE2737436F006616D3 /* EachAddedUserCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		D26B02A62735F5A6006616D3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D26B02A827360540006616D3 /* AddUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserController.swift; sourceTree = "<group>"; };
 		D26B02AA27361450006616D3 /* EachUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EachUserCell.swift; sourceTree = "<group>"; };
+		D26B02AC2736FA78006616D3 /* CreateListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListViewController.swift; sourceTree = "<group>"; };
+		D26B02AE2737436F006616D3 /* EachAddedUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EachAddedUserCell.swift; sourceTree = "<group>"; };
 		EC43E19948F6C38E71D8AB4D /* Pods-GroupGroceryListTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroupGroceryListTests.release.xcconfig"; path = "Target Support Files/Pods-GroupGroceryListTests/Pods-GroupGroceryListTests.release.xcconfig"; sourceTree = "<group>"; };
 		FDE7414D845F2CEF5DF80EB3 /* Pods_GroupGroceryList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GroupGroceryList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -128,6 +132,7 @@
 				D26B02A22734AE0D006616D3 /* LoginViewController.swift */,
 				295D1F32272073AD00D23887 /* SceneDelegate.swift */,
 				295D1F36272073AD00D23887 /* Main.storyboard */,
+				D26B02AC2736FA78006616D3 /* CreateListViewController.swift */,
 				D26B02A827360540006616D3 /* AddUserController.swift */,
 				D26B02A62735F5A6006616D3 /* HomeViewController.swift */,
 				295D1F39272073B900D23887 /* Assets.xcassets */,
@@ -135,6 +140,7 @@
 				295D1F3E272073B900D23887 /* Info.plist */,
 				D26B02A42734C1EB006616D3 /* SignUpViewController.swift */,
 				D26B02AA27361450006616D3 /* EachUserCell.swift */,
+				D26B02AE2737436F006616D3 /* EachAddedUserCell.swift */,
 			);
 			path = GroupGroceryList;
 			sourceTree = "<group>";
@@ -418,6 +424,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D26B02AF2737436F006616D3 /* EachAddedUserCell.swift in Sources */,
+				D26B02AD2736FA78006616D3 /* CreateListViewController.swift in Sources */,
 				D26B02A72735F5A6006616D3 /* HomeViewController.swift in Sources */,
 				D26B02A32734AE0D006616D3 /* LoginViewController.swift in Sources */,
 				295D1F31272073AD00D23887 /* AppDelegate.swift in Sources */,
