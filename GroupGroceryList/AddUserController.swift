@@ -22,9 +22,17 @@ class AddUserController: UIViewController, UITableViewDataSource,UITableViewDele
     @IBOutlet weak var TLlistname: UILabel!
     @IBOutlet weak var TVUsers: UITableView!
 
+    
     @IBOutlet weak var TVAddedUsers: UITableView!
     
     @IBOutlet weak var TFSearchText: UITextField!   //made 2 outlets to get this to work
+    
+    @IBAction func CreateListAction(_ sender: Any) {
+        //ToDo: need to implement nessesary checks for successfull goto List
+        performSegue(withIdentifier: "ItemSearchSegue", sender: nil)
+        
+    }
+    
     
     @IBAction func TFSearchUsers(_ sender: Any) {
         let str = TFSearchText.text
