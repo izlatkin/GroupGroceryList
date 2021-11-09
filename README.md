@@ -42,7 +42,9 @@ An app that allows users to add members to a group, create shared grocery lists,
 - [ ] Scanning receipts and pulling total cost from it.
 - [ ] Tracking how much money users in a group spend on groceries
 
-
+### Walkthrough videos
+### Account creation and list creation (11/8/2021)
+<img src="https://github.com/izlatkin/GroupGroceryList/blob/main/createlist.gif" width=250><br>
 
 ### 2. Screen Archetypes
 
