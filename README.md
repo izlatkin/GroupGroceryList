@@ -29,18 +29,20 @@ An app that allows users to add members to a group, create shared grocery lists,
 
 **Required Must-have Stories**
 
-* Users can search a grocery API and add items to their personal list and mutually shared lists.
-* Users can create a profile and add other app users to a group in which a mutually shared grocery list is present.
-* Grocery items can be added, removed, and notes/comments can be added for each item.
-* As user shops, can move collected items to a separate list to differentiate between items that still need to be collected.
+- [ ] Users can search a grocery API and add items to their personal list and mutually shared lists.
+- [x] Users can create a profile and add other app users to a group in which a mutually shared grocery list is present.
+- [ ] Grocery items can be added, removed, and notes/comments can be added for each item.
+- [ ] As user shops, can move collected items to a separate list to differentiate between items that still need to be collected.
  
 
 **Optional Nice-to-have Stories**
 
-* Direct messaging features
-* Maps API to find grocery stores nearby
-* Scanning receipts and pulling total cost from it.
-* Tracking how much money users in a group spend on groceries
+- [ ] Direct messaging features
+- [ ] Maps API to find grocery stores nearby
+- [ ] Scanning receipts and pulling total cost from it.
+- [ ] Tracking how much money users in a group spend on groceries
+
+
 
 ### 2. Screen Archetypes
 
