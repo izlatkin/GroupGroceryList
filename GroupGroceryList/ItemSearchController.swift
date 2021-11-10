@@ -30,7 +30,15 @@ class ItemSearchController: UIViewController, UITableViewDataSource,UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell") as! ItemCell
-        cell.ItemName.text = raw_items[indexPath.row]["title"] as! String
+        var tmp_str = raw_items[indexPath.row]["title"] as! String
+        var str = tmp_str.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+        cell.ItemName.text = str
+        tmp_str = raw_items[indexPath.row]["description"] as! String
+        str = tmp_str.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+        cell.DescriptionLabble.text = str
+        let imageURL_string = raw_items[indexPath.row]["imageUrl"] as! String
+        var imageURL = URL(string: imageURL_string )
+        cell.ImageOfItem.af_setImage(withURL: imageURL!)
         return cell
     }
     
@@ -51,33 +59,38 @@ class ItemSearchController: UIViewController, UITableViewDataSource,UITableViewD
     }
     
     func search(s: String){
-        let headers = [
-            "x-rapidapi-key": "478c5bbd95mshe675fbe01298f00p1f0beajsndf857b06d8f6"
-        ]
-
-        let request = NSMutableURLRequest(url: NSURL(string: "https://walmart2.p.rapidapi.com/search?query=\(s)")! as URL,
-                                                cachePolicy: .useProtocolCachePolicy,
-                                            timeoutInterval: 10.0)
-        request.httpMethod = "GET"
-        request.allHTTPHeaderFields = headers
-
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-            if (error != nil) {
-                print(error)
-            } else {
-                if let data = data {
-                    let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-                   
-                    self.raw_items = dataDictionary["items"] as! [[String : Any]]
-                    
-                }
+            guard let url = URL(string: "https://walmart2.p.rapidapi.com/search?query=\(s)") else {
+                return
             }
-        })
+            
+            let headers = [
+                "x-rapidapi-key": "478c5bbd95mshe675fbe01298f00p1f0beajsndf857b06d8f6"
+            ]
+            
+            let request = NSMutableURLRequest(
+                url: url,
+                cachePolicy: .useProtocolCachePolicy,
+                timeoutInterval: 10.0
+            )
+            request.httpMethod = "GET"
+            request.allHTTPHeaderFields = headers
 
-        dataTask.resume()
+            let session = URLSession.shared
+            let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+                if (error != nil) {
+                    print(error)
+                } else {
+                    if let data = data,
+                       let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                       let resultItems = dataDictionary["items"] as? [[String : Any]]
+                    {
+                        self.raw_items = resultItems
+                    }
+                }
+            })
 
-    }
+            dataTask.resume()
+        }
     
     
 

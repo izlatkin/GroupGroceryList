@@ -11,8 +11,13 @@ class ItemCell: UITableViewCell {
 
     @IBOutlet weak var ItemName: UILabel!
     
+    @IBOutlet weak var DescriptionLabble: UILabel!
     
+    @IBOutlet weak var ImageOfItem: UIImageView!
     
+    @IBAction func AddItem(_ sender: Any) {
+        print("Item \(ItemName.text) added")
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
