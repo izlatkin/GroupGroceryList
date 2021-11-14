@@ -395,8 +395,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="CQS-FM-hQ7"/>
                     <connections>
-                        <outlet property="AddItem" destination="ZaD-hE-e3I" id="wLS-8M-zA5"/>
-                        <outlet property="ItemSearchText" destination="29m-N1-Fuo" id="1Ou-8h-Z5p"/>
+                        <outlet property="itemSearchTextField" destination="29m-N1-Fuo" id="gJu-TY-jqN"/>
+                        <outlet property="itemsTableView" destination="ZaD-hE-e3I" id="f4z-nt-7SZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M7c-MW-edZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
