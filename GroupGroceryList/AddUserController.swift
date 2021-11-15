@@ -29,7 +29,20 @@ class AddUserController: UIViewController, UITableViewDataSource,UITableViewDele
     
     @IBAction func CreateListAction(_ sender: Any) {
         //ToDo: need to implement nessesary checks for successfull goto List
-        performSegue(withIdentifier: "ItemSearchSegue", sender: nil)
+        let NewList = PFObject(className: "ShoppingList")
+        NewList["UserList"] = AddedUserList
+        NewList["ListName"] = listname
+        NewList["CreatorName"] = PFUser.current()?["username"]
+        NewList.saveInBackground { success, Error in
+            if success{
+                self.performSegue(withIdentifier: "ItemSearchSegue", sender: nil)
+            }
+            else{
+                print("failed to save new list")
+            }
+        }
+        
+        
         
     }
     
