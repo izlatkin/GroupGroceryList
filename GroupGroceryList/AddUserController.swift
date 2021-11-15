@@ -104,11 +104,22 @@ class AddUserController: UIViewController, UITableViewDataSource,UITableViewDele
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if tableView == TVUsers{
-            print("og tableview")
+        //    print("og tableview")
             let cell = TVUsers.dequeueReusableCell(withIdentifier: "EachUserCell") as! EachUserCell
-            
+          
             let username = UserList[indexPath.row]["username"] as! String
             let user = UserList[indexPath.row]
+            
+            if UsersAdded[username] == nil{
+                cell.btnSelectUser.setTitle("Add to List", for: .normal)
+                cell.btnSelectUser.setTitleColor(UIColor.systemBlue, for: .normal)
+              
+            }
+            else{
+                cell.btnSelectUser.setTitle("Remove", for: .normal)
+                cell.btnSelectUser.setTitleColor(UIColor.red, for: .normal)
+                
+            }
             
             if username == Me!["username"] as! String{
                 cell.btnSelectUser.isHidden = true
@@ -129,7 +140,7 @@ class AddUserController: UIViewController, UITableViewDataSource,UITableViewDele
             return cell
         }
         else{
-            print("other tv")
+      //      print("other tv")
     
             let cell = TVAddedUsers.dequeueReusableCell(withIdentifier: "EachAddedUserCell") as! EachAddedUserCell
             var username = AddedUserList[indexPath.row]["username"] as! String
@@ -164,14 +175,13 @@ extension AddUserController: UserCellDelegate{
     func TappedCellbtn(with user: PFObject) {
         
         let name = user["username"] as! String
-        
         if UsersAdded[name] == nil{
             UsersAdded[name] = user
             AddedUserList.append(user)
-            print("added")
+        //    print("added")
         }
         else{
-            print("removing")
+          //  print("removing")
             UsersAdded[name] = nil
             var index = 0
             for person in AddedUserList{
