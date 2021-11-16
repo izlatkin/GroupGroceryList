@@ -46,6 +46,11 @@ An app that allows users to add members to a group, create shared grocery lists,
 ### Account creation and list creation (11/8/2021)
 <img src="https://github.com/izlatkin/GroupGroceryList/blob/main/createlist.gif" width=250><br>
 
+
+### Lists displaying and searching for items (11/15/2021)
+<img src="https://github.com/izlatkin/GroupGroceryList/blob/main/wthrough.gif" width=250><br>
+
+
 ### 2. Screen Archetypes
 
 * Login/Sign Up
