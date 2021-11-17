@@ -19,6 +19,7 @@
 		298C4BBB273830A1009EA9CC /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298C4BBA273830A1009EA9CC /* ItemCell.swift */; };
 		688829DF27396F3500913D7B /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688829DE27396F3500913D7B /* MyProfileViewController.swift */; };
 		688829E127396F6B00913D7B /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688829E027396F6B00913D7B /* GroupCell.swift */; };
+		68E921D927448F7700631621 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E921D827448F7700631621 /* SettingsViewController.swift */; };
 		D2116D872741C77600CB44D9 /* EachListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2116D862741C77600CB44D9 /* EachListCell.swift */; };
 		D26B02A32734AE0D006616D3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B02A22734AE0D006616D3 /* LoginViewController.swift */; };
 		D26B02A52734C1EB006616D3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B02A42734C1EB006616D3 /* SignUpViewController.swift */; };
@@ -65,6 +66,7 @@
 		298C4BBA273830A1009EA9CC /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		688829DE27396F3500913D7B /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		688829E027396F6B00913D7B /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
+		68E921D827448F7700631621 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9A84E3A4424109363DAF3FA7 /* Pods-GroupGroceryList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroupGroceryList.release.xcconfig"; path = "Target Support Files/Pods-GroupGroceryList/Pods-GroupGroceryList.release.xcconfig"; sourceTree = "<group>"; };
 		D2116D862741C77600CB44D9 /* EachListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EachListCell.swift; sourceTree = "<group>"; };
 		D26B02A22734AE0D006616D3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				688829DE27396F3500913D7B /* MyProfileViewController.swift */,
 				688829E027396F6B00913D7B /* GroupCell.swift */,
 				D2116D862741C77600CB44D9 /* EachListCell.swift */,
+				68E921D827448F7700631621 /* SettingsViewController.swift */,
 			);
 			path = GroupGroceryList;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				D26B02A72735F5A6006616D3 /* HomeViewController.swift in Sources */,
 				D26B02A32734AE0D006616D3 /* LoginViewController.swift in Sources */,
 				688829DF27396F3500913D7B /* MyProfileViewController.swift in Sources */,
+				68E921D927448F7700631621 /* SettingsViewController.swift in Sources */,
 				688829E127396F6B00913D7B /* GroupCell.swift in Sources */,
 				295D1F31272073AD00D23887 /* AppDelegate.swift in Sources */,
 				295D1F33272073AD00D23887 /* SceneDelegate.swift in Sources */,
