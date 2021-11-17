@@ -23,8 +23,6 @@ class EachUserCell: UITableViewCell {
     
     @IBOutlet weak var btnSelectUser: UIButton!
     
-    // test commit. do i have vcs working?
-    
     @IBAction func btnSelectUser(_ sender: Any) {
  
         //This code runs to cause an immediate animation but isn't based on data-
