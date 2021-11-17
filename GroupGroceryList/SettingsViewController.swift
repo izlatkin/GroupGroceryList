@@ -9,6 +9,35 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var signOut: UIButton!
+    
+    @IBOutlet weak var displayName: UILabel!
+    
+    @IBOutlet weak var profileImage: UIImageView!
+    
+    
+    @IBOutlet weak var changeProfile: UIButton!
+    
+    @IBOutlet weak var usernameLabel: UILabel!
+    
+    @IBOutlet weak var changeUsername: UIButton!
+    
+    @IBOutlet weak var passwordLabel: UILabel!
+    
+    
+    @IBOutlet weak var changePassword: UIButton!
+    
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var changeName: UIButton!
+    
+    
+    @IBOutlet weak var modeSlider: UISwitch!
+    
+    
+    @IBOutlet weak var modeIndicator: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -1017,12 +1017,19 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="changeName" destination="cOU-a2-9zK" id="K06-QE-5AY"/>
+                        <outlet property="changePassword" destination="GOo-1A-fG4" id="Y75-eV-jbr"/>
                         <outlet property="changePicture" destination="gdD-VY-g0t" id="K0x-wv-oca"/>
-                        <outlet property="changeUsername" destination="ZPw-f6-Ae5" id="aq8-l3-DzX"/>
-                        <outlet property="nameLabel" destination="TBy-Qx-8ha" id="qph-ry-X8f"/>
-                        <outlet property="profileImage" destination="GlL-qK-TP6" id="8fY-pA-uid"/>
-                        <outlet property="signOut" destination="at0-a2-8Fa" id="mDY-6m-L8n"/>
-                        <outlet property="usernameLabel" destination="ul0-3X-z2E" id="kAP-3d-oC4"/>
+                        <outlet property="changeProfile" destination="gdD-VY-g0t" id="7Ii-c3-obC"/>
+                        <outlet property="changeUsername" destination="ZPw-f6-Ae5" id="OJh-UB-nXa"/>
+                        <outlet property="displayName" destination="TBy-Qx-8ha" id="zwx-gO-UlC"/>
+                        <outlet property="modeIndicator" destination="e48-OH-YDM" id="6OU-4l-HO6"/>
+                        <outlet property="modeSlider" destination="TRZ-db-UON" id="2z2-MN-lvh"/>
+                        <outlet property="nameLabel" destination="I5D-XV-2xb" id="av6-SS-nfi"/>
+                        <outlet property="passwordLabel" destination="InZ-oW-5gc" id="Zap-Ps-M1G"/>
+                        <outlet property="profileImage" destination="GlL-qK-TP6" id="cMe-6b-QMg"/>
+                        <outlet property="signOut" destination="at0-a2-8Fa" id="6Ap-2M-GVK"/>
+                        <outlet property="usernameLabel" destination="ul0-3X-z2E" id="koB-Xm-6jV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BHc-5p-vXz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
