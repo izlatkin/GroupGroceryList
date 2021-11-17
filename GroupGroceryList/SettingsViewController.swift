@@ -8,6 +8,8 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
+    bool on = false
+   
 
     @IBOutlet weak var signOut: UIButton!
     
@@ -38,13 +40,50 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var modeIndicator: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var basicUserLabel: UILabel!
+    
+    @IBOutlet weak var basicPasswordLabel: UILabel!
+    
+    @IBOutlet weak var basicNameLabel: UILabel!
+    
+    @IBAction func modeActivated(_ sender: UISwitch) {
+        
+        if modeSlider.isOn {
+            modeIndicator.text = "Dark Mode Activated"
+             on = true
+            
+        }
+        else {
+            modeIndicator.text = "Dark Mode Off"
+            on = false
+        }
     }
     
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let on = defaults.bool(forKey: "myBool")
+        if bool(on) == true {
+            modeslider.on
+        }
+        else {
+            modeSlider.off
+        }
+        
+        if on == true {
+            self.view.backgroundColor = UIColor.black
+            displayName.textColor = UIColor.white
+            usernameLabel.textColor = UIColor.white
+            passwordLabel.textColor = UIColor.white
+            nameLabel.textColor = UIColor.white
+            modeIndicator.textColor = UIColor.white
+            basicUserLabel.textColor = UIColor.white
+            basicPasswordLabel.textColor = UIColor.white
+            basicNameLabel.textColor = UIColor.white
+            
+        }
+    
+    }
     /*
     // MARK: - Navigation
 
