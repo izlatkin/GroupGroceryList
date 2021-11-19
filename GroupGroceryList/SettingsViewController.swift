@@ -46,6 +46,27 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var basicNameLabel: UILabel!
     
+    
+    @IBAction func changeProfilePic(_ sender: Any) {
+        let picker=UIImagePickerController()
+        picker.delegate=self
+        picker.allowsEditing=true
+        print("clicking")
+    
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            picker.sourceType = .camera
+        }
+        else{
+            picker.sourceType = .photoLibrary
+        }
+        
+        present(picker, animated: true, completion: nil)
+    }
+    
+    
+    
+    
+    
     @IBAction func modeActivated(_ sender: UISwitch) {
         
         if modeSlider.isOn {
@@ -61,6 +82,8 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         let on = defaults.bool(forKey: "myBool")
         if bool(on) == true {
@@ -82,7 +105,31 @@ class SettingsViewController: UIViewController {
             basicNameLabel.textColor = UIColor.white
             
         }
+        else {
+            self.view.backgroundColor = UIColor.white
+            displayName.textColor = UIColor.black
+            usernameLabel.textColor = UIColor.black
+            passwordLabel.textColor = UIColor.black
+            nameLabel.textColor = UIColor.white
+            modeIndicator.textColor = UIColor.black
+            basicUserLabel.textColor = UIColor.black
+            basicPasswordLabel.textColor = UIColor.black
+            basicNameLabel.textColor = UIColor.black
+            
+        }
     
+        
+    
+        
+    }
+    
+    @IBAction func LogOut(_ sender: Any) {
+        PFUser.logOut()
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = main.instantiateViewController(identifier: "LoginViewController")
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let delegate = windowScene.delegate as? SceneDelegate else { return }
+        delegate.window?.rootViewController = loginViewController
+        
     }
     /*
     // MARK: - Navigation
