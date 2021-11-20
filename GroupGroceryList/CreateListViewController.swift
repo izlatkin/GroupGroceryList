@@ -14,6 +14,8 @@ class CreateListViewController: UIViewController {
     
     
     @IBAction func btnSubmitListName(_ sender: Any) {
+        let defaults = UserDefaults.standard
+        defaults.set(TFListName.text , forKey: "currentList")
     
         self.performSegue(withIdentifier: "AddUsersToListSegue", sender: nil)
     }

@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Parse
+
 
 class ItemSearchController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var rawItems = [[String:Any]]()
@@ -13,12 +15,44 @@ class ItemSearchController: UIViewController, UITableViewDataSource, UITableView
 //    @IBOutlet weak var itemSearchTextField: UITextField!
 //    @IBOutlet weak var itemsTableView: UITableView!
     
+    var username = ""
+    var currentListName = ""
+    public var currentListID = ""
+    var listOfUsers:[PFObject]=[]
+    
     @IBOutlet weak var itemSearchTextField: UITextField!
     
     @IBOutlet weak var itemsTableView: UITableView!
     
+    public func getCurrentListID() -> String{
+        return currentListID
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //itemsTableView.register(ItemCell.nub(), forCellReuseIdentifier: "ItemCell")
+        
+        username = PFUser.current()?["username"] as! String
+        print("user name: \(username)")
+        let defaults = UserDefaults.standard
+        currentListName = defaults.string(forKey: "currentList") ?? ""
+        print("current list: \(currentListName)")
+        
+        let query = PFQuery(className: "ShoppingList")
+        query.includeKeys(["objectID", "UserList", "ListName"])
+        query.whereKey("ListName", equalTo: currentListName)
+        do{
+            let results = try query.getFirstObject()
+            print("results:")
+            print(results)
+            print("objectId:")
+            print(results.objectId)
+            currentListID = results.objectId ?? ""
+            defaults.set(currentListID , forKey: "currentListID")
+        }catch{
+            //couldn't get a listname
+        }
         
         itemsTableView.dataSource = self
         itemsTableView.delegate = self
@@ -41,6 +75,9 @@ class ItemSearchController: UIViewController, UITableViewDataSource, UITableView
         let imageURL_string = rawItems[indexPath.row]["imageUrl"] as! String
         var imageURL = URL(string: imageURL_string )
         cell.ImageOfItem.af_setImage(withURL: imageURL!)
+        
+        cell.delegate = self
+        
         return cell
     }
     
@@ -104,4 +141,40 @@ class ItemSearchController: UIViewController, UITableViewDataSource, UITableView
 
         dataTask.resume()
     }
+}
+
+
+extension UIViewController: ItemCellDelegate{
+    func AddItem(with cell: ItemCell) {
+        print("ItemName: \(cell.ItemName.text)")
+        print("DescriptionLabble: \(cell.DescriptionLabble.text)")
+        
+        let post = PFObject(className: "ItemsTable")
+        let defaults = UserDefaults.standard
+        let ListID = defaults.string(forKey: "currentListID") ?? ""
+        //post["ListID"] = "testID"
+        post["ListID"] = ListID
+        //post["ListName"] = currentListName
+        post["ItemName"] = cell.ItemName.text
+        post["Description"] = cell.DescriptionLabble.text
+        let imageData = cell.ImageOfItem.image!.pngData()
+        let file = PFFileObject(name:"image.png", data: imageData!)
+        
+        post["image"] = file
+        
+        post.saveInBackground{ (success, error) in
+            if (success){
+                //self.dismiss(animated: true, completion: nil)
+                print("saved!")
+            }else{
+                print("error!")
+            }
+            
+        }
+        //cell.ItemCellAddbuttom.titleLabel?.textColor = UIColor.gray
+        cell.ItemCellAddbuttom.setTitleColor(UIColor.gray, for: .normal)
+        
+    }
+    
+    
 }
