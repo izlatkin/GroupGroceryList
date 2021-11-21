@@ -16,6 +16,8 @@ class ItemCell: UITableViewCell {
     
     static let identifier = "ItemCell"
     
+    var isAdded = false
+    
     var listname = ""
 
     @IBOutlet weak var ItemName: UILabel!

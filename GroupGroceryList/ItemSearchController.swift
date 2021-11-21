@@ -7,6 +7,7 @@
 
 import UIKit
 import Parse
+import CryptoKit
 
 
 class ItemSearchController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -75,6 +76,7 @@ class ItemSearchController: UIViewController, UITableViewDataSource, UITableView
         let imageURL_string = rawItems[indexPath.row]["imageUrl"] as! String
         var imageURL = URL(string: imageURL_string )
         cell.ImageOfItem.af_setImage(withURL: imageURL!)
+        cell.isAdded = false
         
         cell.delegate = self
         
@@ -146,33 +148,62 @@ class ItemSearchController: UIViewController, UITableViewDataSource, UITableView
 
 extension UIViewController: ItemCellDelegate{
     func AddItem(with cell: ItemCell) {
-        print("ItemName: \(cell.ItemName.text)")
-        print("DescriptionLabble: \(cell.DescriptionLabble.text)")
-        
-        let post = PFObject(className: "ItemsTable")
         let defaults = UserDefaults.standard
         let ListID = defaults.string(forKey: "currentListID") ?? ""
-        //post["ListID"] = "testID"
-        post["ListID"] = ListID
-        //post["ListName"] = currentListName
-        post["ItemName"] = cell.ItemName.text
-        post["Description"] = cell.DescriptionLabble.text
-        let imageData = cell.ImageOfItem.image!.pngData()
-        let file = PFFileObject(name:"image.png", data: imageData!)
+        if (!cell.isAdded){
+            print("ItemName: \(cell.ItemName.text)")
+            print("DescriptionLabble: \(cell.DescriptionLabble.text)")
         
-        post["image"] = file
+            let post = PFObject(className: "ItemsTable")
+            post["ListID"] = ListID
+            post["ItemName"] = cell.ItemName.text
+            post["Description"] = cell.DescriptionLabble.text
+            let imageData = cell.ImageOfItem.image!.pngData()
+            let file = PFFileObject(name:"image.png", data: imageData!)
         
-        post.saveInBackground{ (success, error) in
-            if (success){
-                //self.dismiss(animated: true, completion: nil)
-                print("saved!")
-            }else{
-                print("error!")
-            }
+            post["image"] = file
+        
+            post.saveInBackground{ (success, error) in
+                if (success){
+                    //self.dismiss(animated: true, completion: nil)
+                    print("saved!")
+                }else{
+                    print("error!")
+                }
             
+            }
+            //cell.ItemCellAddbuttom.titleLabel?.textColor = UIColor.gray
+            cell.ItemCellAddbuttom.setTitle("Remove", for: .normal)
+            cell.ItemCellAddbuttom.setTitleColor(UIColor.gray, for: .normal)
+            cell.isAdded = true
+        }else{
+            print("delete ItemName: \(cell.ItemName.text)")
+//            let post = PFObject(className: "ItemsTable")
+//            post["ListID"] = ListID
+//            post["ItemName"] = cell.ItemName.text
+//            post.deleteInBackground()
+
+            let query = PFQuery(className: "ItemsTable")
+            // the key "requestResponded" is not True
+            query.whereKey("ListID", equalTo: ListID)
+            // for deleting the object is that it belongs to the current user
+            query.whereKey("ItemName", equalTo: cell.ItemName.text)
+            query.findObjectsInBackground(block: { (objects, error) -> Void in
+                if error != nil{
+                    print(error)
+                }
+                //  objects are those the key "requestResponded" is not True and belongs to the current user
+                objects?.forEach({ object in
+                    object.deleteInBackground()
+                })
+                // other case
+                if objects?.count == 0 { // no match result found
+                }
+            })
+            cell.ItemCellAddbuttom.setTitle("Add", for: .normal)
+            cell.ItemCellAddbuttom.setTitleColor(UIColor.blue, for: .normal)
+            cell.isAdded = false
         }
-        //cell.ItemCellAddbuttom.titleLabel?.textColor = UIColor.gray
-        cell.ItemCellAddbuttom.setTitleColor(UIColor.gray, for: .normal)
         
     }
     

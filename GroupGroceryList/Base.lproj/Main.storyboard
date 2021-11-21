@@ -358,7 +358,7 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GuJ-ka-gBr">
                                                     <rect key="frame" x="304" y="4" width="66" height="41"/>
-                                                    <state key="normal" title="Button"/>
+                                                    <state key="normal" title="Add"/>
                                                     <connections>
                                                         <action selector="AddItem:" destination="haj-ns-DVv" eventType="touchUpInside" id="5bh-CF-EZ7"/>
                                                     </connections>
