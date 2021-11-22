@@ -50,6 +50,7 @@ class MyListViewController: UIViewController,  UITableViewDataSource, UITableVie
             defaults.set(currentListID , forKey: "currentListID")
         }catch{}
         
+        
         let query2 = PFQuery(className: "ItemsTable")
         query2.limit = 20
         query2.whereKey("ListID", equalTo: currentListID)
@@ -64,7 +65,8 @@ class MyListViewController: UIViewController,  UITableViewDataSource, UITableVie
                 self.ItemsTable.reloadData()
             }
         }
-        self.ItemsTable.reloadData()
+        
+        
         
     }
     
@@ -76,9 +78,17 @@ class MyListViewController: UIViewController,  UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EditItemCell") as! EditItemCell
         var itemName = listOfItems[indexPath.row]["ItemName"] as! String
-        cell.ItemName.text = itemName
+        let substring = itemName.dropFirst(15)
+        cell.ItemName.text = String(substring)
         var DescriptionName = listOfItems[indexPath.row]["Description"] as! String
         cell.descriptionName.text = DescriptionName
+        
+        let imageFile = listOfItems[indexPath.row]["image"] as! PFFileObject
+        let urlString = imageFile.url!
+        let url = URL(string: urlString)!
+        cell.ItemImage.af_setImage(withURL: url)
+        cell.delegate = self
+        
         return cell
     }
 
@@ -92,4 +102,37 @@ class MyListViewController: UIViewController,  UITableViewDataSource, UITableVie
     }
     */
 
+    
+}
+
+
+extension UIViewController: EditItemCellDelegate{
+    func removeItem(with cell: EditItemCell) {
+        let defaults = UserDefaults.standard
+        let ListID = defaults.string(forKey: "currentListID") ?? ""
+
+        print("delete ItemName: \(cell.ItemName.text)")
+        print("delete from ListID: \(ListID)")
+        let query = PFQuery(className: "ItemsTable")
+        query.whereKey("ListID", equalTo: ListID)
+        query.whereKey("ItemName", contains: cell.ItemName.text)
+        query.findObjectsInBackground(block: { (objects, error) -> Void in
+            if error != nil{
+                print(error)
+            }
+                //  objects are those the key "requestResponded" is not True and belongs to the current user
+            objects?.forEach({ object in
+                object.deleteInBackground()
+            })
+                // other case
+            if objects?.count == 0 { // no match result found
+            }
+        })
+        cell.removeButtom.setTitle("removed", for: .normal)
+        cell.removeButtom.setTitleColor(UIColor.gray, for: .normal)
+        cell.removeButtom.isEnabled = false
+//        cell.ItemCellAddbuttom.setTitle("Add", for: .normal)
+//        cell.ItemCellAddbuttom.setTitleColor(UIColor.blue, for: .normal)
+//        cell.isAdded = false
+    }
 }

@@ -7,7 +7,12 @@
 
 import UIKit
 
+protocol EditItemCellDelegate: AnyObject{
+    func removeItem(with itemCell:EditItemCell)
+}
+
 class EditItemCell: UITableViewCell {
+    weak var delegate: EditItemCellDelegate?
 
     @IBOutlet weak var ItemImage: UIImageView!
     
@@ -17,6 +22,11 @@ class EditItemCell: UITableViewCell {
     
     @IBOutlet weak var removeButtom: UIButton!
     
+    @IBAction func removeItem(_ sender: Any) {
+        let name = (ItemName.text ?? "") as String
+        print("Removing \(name) added")
+        delegate?.removeItem(with: self)
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
