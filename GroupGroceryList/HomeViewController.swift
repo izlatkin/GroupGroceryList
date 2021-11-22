@@ -72,6 +72,39 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
         
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        print("Loading up the details screen")
+        
+        //find the selected MyList
+        let isWasCell = (sender is UITableViewCell ? true : false)
+        if isWasCell{
+            let cell = try sender as! UITableViewCell
+            let indexPath = TVLists.indexPath(for: cell)!
+            let ListName = AllMyLists[indexPath.row]["ListName"] as! String
+            print("List name \(ListName)")
+            let SelectedMyList = AllMyLists[indexPath.row]
+            let CreatorName = CreatorNames[indexPath.row]
+            let detailsViewController = segue.destination as! MyListViewController
+            detailsViewController.SelectedMyList = SelectedMyList
+            detailsViewController.CreatorName = CreatorName
+            detailsViewController.MyListsMemberCount = MyListsMemberCount[indexPath.row]
+        }
+//        catch {
+//
+//        }
+
+//        let movie = movies[indexPath.row]
+//
+//        //pass the selected movie to the delaild view controller
+//        let detailsViewController = segue.destination as! MoviesDetailsViewController
+//        detailsViewController.movie = movie
+//
+//        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
 
    
 

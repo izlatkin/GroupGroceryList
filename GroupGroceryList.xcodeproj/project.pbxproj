@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		227C836A573D833D669D0BB3 /* Pods_GroupGroceryList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE7414D845F2CEF5DF80EB3 /* Pods_GroupGroceryList.framework */; };
+		2932B607274B575F001C4629 /* MyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2932B606274B575F001C4629 /* MyListViewController.swift */; };
+		2932B609274B6FB2001C4629 /* EditItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2932B608274B6FB2001C4629 /* EditItemCell.swift */; };
 		295D1F31272073AD00D23887 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295D1F30272073AD00D23887 /* AppDelegate.swift */; };
 		295D1F33272073AD00D23887 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295D1F32272073AD00D23887 /* SceneDelegate.swift */; };
 		295D1F38272073AD00D23887 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 295D1F36272073AD00D23887 /* Main.storyboard */; };
@@ -49,6 +51,8 @@
 
 /* Begin PBXFileReference section */
 		1E067153983E9D67DCFA4592 /* Pods-GroupGroceryList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroupGroceryList.debug.xcconfig"; path = "Target Support Files/Pods-GroupGroceryList/Pods-GroupGroceryList.debug.xcconfig"; sourceTree = "<group>"; };
+		2932B606274B575F001C4629 /* MyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListViewController.swift; sourceTree = "<group>"; };
+		2932B608274B6FB2001C4629 /* EditItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemCell.swift; sourceTree = "<group>"; };
 		295D1F2D272073AD00D23887 /* GroupGroceryList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupGroceryList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		295D1F30272073AD00D23887 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		295D1F32272073AD00D23887 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 				D26B02A22734AE0D006616D3 /* LoginViewController.swift */,
 				295D1F32272073AD00D23887 /* SceneDelegate.swift */,
 				295D1F36272073AD00D23887 /* Main.storyboard */,
+				2932B606274B575F001C4629 /* MyListViewController.swift */,
+				2932B608274B6FB2001C4629 /* EditItemCell.swift */,
 				D26B02AC2736FA78006616D3 /* CreateListViewController.swift */,
 				D26B02A827360540006616D3 /* AddUserController.swift */,
 				2968F0CA273822C7005850CB /* ItemSearchController.swift */,
@@ -366,8 +372,10 @@
 				D26B02AF2737436F006616D3 /* EachAddedUserCell.swift in Sources */,
 				D26B02AD2736FA78006616D3 /* CreateListViewController.swift in Sources */,
 				298C4BBB273830A1009EA9CC /* ItemCell.swift in Sources */,
+				2932B609274B6FB2001C4629 /* EditItemCell.swift in Sources */,
 				D2116D872741C77600CB44D9 /* EachListCell.swift in Sources */,
 				D26B02A72735F5A6006616D3 /* HomeViewController.swift in Sources */,
+				2932B607274B575F001C4629 /* MyListViewController.swift in Sources */,
 				D26B02A32734AE0D006616D3 /* LoginViewController.swift in Sources */,
 				688829DF27396F3500913D7B /* MyProfileViewController.swift in Sources */,
 				68E921D927448F7700631621 /* SettingsViewController.swift in Sources */,
