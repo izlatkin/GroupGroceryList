@@ -11,6 +11,7 @@ import Parse
 class SettingsViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     let modes = [0,1]
+    
    
   
     @IBOutlet weak var SignOut: UIButton!
@@ -37,7 +38,7 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
     
     @IBOutlet weak var clearLabel: UILabel!
     var om_var = false
-    //var userinfo = [PFObject]()
+   
     
     @IBAction func changeProfilePic(_ sender: Any) {
         let picker=UIImagePickerController()
@@ -58,15 +59,27 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let modeValue = defaults.double(forKey: "myInt")
-       // let name = defaults.string(forKey: "myString")
+      
                viewMode.selectedSegmentIndex = Int(modeValue)
+        
         
         let userinfo = PFObject(className: "UserInfo")
         userinfo["Username"] = PFUser.current()!
+        userinfo["Password"] = PFUser.current()!
+        
      
         let user = userinfo["Username"] as! PFUser
         usernameLabel.text = user.username
+       // let user2 = userinfo["Password"] as! PFUser
+        //passwordLabel.text = user2.password
+        let imageFile = user["ProfilePicture"] as! PFFileObject
+        let urlString = imageFile.url!
+        let url = URL(string: urlString)
+        
+        profileImage.af_setImage(withURL: url!)
+        
                if (modeValue == 0)
                {
                    self.view.backgroundColor = UIColor.white

@@ -981,6 +981,9 @@
                                 <rect key="frame" x="134" y="406" width="148" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="ChangeUsername:" destination="aTR-6O-ZzU" eventType="touchUpInside" id="YVO-Wq-jBA"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZA-Gx-Tkq">
                                 <rect key="frame" x="136" y="61" width="142" height="21"/>
@@ -1193,7 +1196,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="OLG-mE-eCE"/>
+        <segue reference="WZV-ht-0FP"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="folder" catalog="system" width="128" height="97"/>

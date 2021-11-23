@@ -22,8 +22,15 @@ class ChangeUsernameViewController: UIViewController {
     
     
     @IBOutlet weak var submitButton: UIButton!
+    let userinfo = PFObject(className: "UserInfo")
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+      
+        userinfo["Username"] = PFUser.current()!
+     
+        let user = userinfo["Username"] as! PFUser
+        currentUsername.text = user.username
 
         // Do any additional setup after loading the view.
     }
@@ -51,7 +58,14 @@ class ChangeUsernameViewController: UIViewController {
             
         }
     }
+    
+    @IBAction func ChangeUsername(_ sender: UIButton) {
+        let user = userinfo["Username"] as! PFUser
+        user.username = newUsernameField.text
 
+        
+    }
+    
     /*
     // MARK: - Navigation
 
