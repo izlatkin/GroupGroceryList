@@ -26,6 +26,7 @@ class ChangeNameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
     }
@@ -34,6 +35,11 @@ class ChangeNameViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let modeValue = defaults.double(forKey: "myInt")
+        var Name = defaults.string(forKey: "myString")
+        
+        currentName.text = Name
+        
+        
         if (modeValue == 0)
         {
             self.view.backgroundColor = UIColor.white
@@ -53,10 +59,19 @@ class ChangeNameViewController: UIViewController {
             newNameLabel.textColor = UIColor.white
         }
         
-
+    
      
     }
-
+    
+    
+    @IBAction func changeName(_ sender: UIButton) {
+        defaults.set(newNameField.text, forKey: "myString")
+        defaults.synchronize()
+        currentName.text = newNameField.text
+        
+    }
+  
+    
 
     /*
     // MARK: - Navigation

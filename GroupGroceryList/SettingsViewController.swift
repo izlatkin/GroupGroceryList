@@ -58,7 +58,10 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         let modeValue = defaults.double(forKey: "myInt")
+       // let name = defaults.string(forKey: "myString")
                viewMode.selectedSegmentIndex = Int(modeValue)
+        
+        
                if (modeValue == 0)
                {
                    self.view.backgroundColor = UIColor.white
@@ -88,9 +91,18 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
                  
                }
     }
+    let defaults = UserDefaults.standard
 
-        let defaults = UserDefaults.standard
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let name = defaults.string(forKey: "myString")
+        displayName.text = name
+        nameLabel.text = name
+        
+               
+    }
 
+      
       
     
         
@@ -99,6 +111,7 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
         let modevalue = modes[viewMode.selectedSegmentIndex]
                 clearLabel.text = "\(modevalue)"
                 defaults.set(clearLabel.text, forKey: "myInt")
+    
                 if (modevalue == 0)
                 {
                     self.view.backgroundColor = UIColor.white
@@ -128,7 +141,7 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
                 defaults.synchronize()
 
     }
-    /*
+    
     
     @IBAction func LogOut(_ sender: UIButton) {
         PFUser.logOut()
@@ -137,7 +150,7 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let delegate = windowScene.delegate as? SceneDelegate else { return }
         delegate.window?.rootViewController = loginViewController
     }
-     */
+     
     /*
     // MARK: - Navigation
 
