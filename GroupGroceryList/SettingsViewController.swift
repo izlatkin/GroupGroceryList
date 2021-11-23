@@ -12,7 +12,8 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
     
     let modes = [0,1]
    
-    @IBOutlet weak var signOut: UIButton!
+  
+    @IBOutlet weak var SignOut: UIButton!
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var displayName: UILabel!
@@ -36,7 +37,7 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
     
     @IBOutlet weak var clearLabel: UILabel!
     var om_var = false
-    
+    //var userinfo = [PFObject]()
     
     @IBAction func changeProfilePic(_ sender: Any) {
         let picker=UIImagePickerController()
@@ -61,7 +62,11 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
        // let name = defaults.string(forKey: "myString")
                viewMode.selectedSegmentIndex = Int(modeValue)
         
-        
+        let userinfo = PFObject(className: "UserInfo")
+        userinfo["Username"] = PFUser.current()!
+     
+        let user = userinfo["Username"] as! PFUser
+        usernameLabel.text = user.username
                if (modeValue == 0)
                {
                    self.view.backgroundColor = UIColor.white
@@ -98,6 +103,7 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
         let name = defaults.string(forKey: "myString")
         displayName.text = name
         nameLabel.text = name
+        
         
                
     }
@@ -143,14 +149,16 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
     }
     
     
-    @IBAction func LogOut(_ sender: UIButton) {
+
+    
+    @IBAction func LogOff(_ sender: Any) {
         PFUser.logOut()
         let main = UIStoryboard(name: "Main", bundle: nil)
         let loginViewController = main.instantiateViewController(identifier: "LoginViewController")
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let delegate = windowScene.delegate as? SceneDelegate else { return }
         delegate.window?.rootViewController = loginViewController
     }
-     
+    
     /*
     // MARK: - Navigation
 

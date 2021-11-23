@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Z8t-9A-yaH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -1118,15 +1118,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5r8-tp-WWI">
-                                <rect key="frame" x="314" y="63" width="80" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Sign Out"/>
-                                <connections>
-                                    <action selector="LogOut:" destination="Z8t-9A-yaH" eventType="touchUpInside" id="fe3-k7-wVQ"/>
-                                </connections>
-                            </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4Eg-Oi-tUb">
                                 <rect key="frame" x="157" y="709" width="101" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1163,12 +1154,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVR-KG-2iw">
+                                <rect key="frame" x="314" y="147" width="80" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sign Out"/>
+                                <connections>
+                                    <action selector="LogOff:" destination="Z8t-9A-yaH" eventType="touchUpInside" id="hXO-0L-RxU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="f7u-mC-OS7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="0fM-SC-AqN"/>
                     <connections>
+                        <outlet property="SignOut" destination="oVR-KG-2iw" id="e5B-bd-pIG"/>
                         <outlet property="basicNameLabel" destination="7tF-jA-H6G" id="Ckb-Zx-sVH"/>
                         <outlet property="basicPasswordLabel" destination="geg-rN-2Tf" id="zLf-k1-fFZ"/>
                         <outlet property="basicUserLabel" destination="ZIy-Dw-y3c" id="WxG-ps-Mwr"/>
@@ -1181,7 +1182,6 @@
                         <outlet property="nameLabel" destination="I5D-XV-2xb" id="av6-SS-nfi"/>
                         <outlet property="passwordLabel" destination="InZ-oW-5gc" id="Zap-Ps-M1G"/>
                         <outlet property="profileImage" destination="GlL-qK-TP6" id="cMe-6b-QMg"/>
-                        <outlet property="signOut" destination="5r8-tp-WWI" id="D7p-Jy-hOD"/>
                         <outlet property="titleLabel" destination="EER-cW-ILo" id="oXc-oX-dv4"/>
                         <outlet property="usernameLabel" destination="ul0-3X-z2E" id="koB-Xm-6jV"/>
                         <outlet property="viewMode" destination="4Eg-Oi-tUb" id="ecK-7G-sy2"/>
