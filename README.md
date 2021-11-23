@@ -50,6 +50,9 @@ An app that allows users to add members to a group, create shared grocery lists,
 ### Lists displaying and searching for items (11/15/2021)
 <img src="https://github.com/izlatkin/GroupGroceryList/blob/main/wthrough.gif" width=250><br>
 
+### Settings and Profile Walkthrough (11/22/2021)
+<img src="https://github.com/izlatkin/GroupGroceryList/blob/main/iosgif1122.gif" width=250><br>
+
 
 ### 2. Screen Archetypes
 
