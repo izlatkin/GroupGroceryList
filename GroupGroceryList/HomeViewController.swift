@@ -9,8 +9,11 @@ import UIKit
 import Parse
 
 class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDelegate {
+    let defaults = UserDefaults.standard
    
     @IBOutlet weak var TVLists: UITableView!
+    
+    @IBOutlet weak var titleLabel: UILabel!
     
     var AllShoppingList:[PFObject]=[]
     var AllMyLists:[PFObject]=[]
@@ -28,14 +31,32 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
         cell.CreatorName.text = "Created By " + CreatorNames[indexPath.row]
         let count=MyListsMemberCount[indexPath.row]
         cell.TLListMemberCount.text = "\(count) Members"
-
+        let modeValue = defaults.double (forKey: "myInt")
+        if (modeValue == 0)
+        {
+            cell.contentView.backgroundColor = UIColor.white
+            cell.TLListName.textColor = UIColor.black
+            cell.CreatorName.textColor = UIColor.black
+            cell.TLListMemberCount.textColor = UIColor.black
+        }
+        if (modeValue == 1)
+        {
+            cell.contentView.backgroundColor = UIColor.black
+            cell.TLListName.textColor = UIColor.white
+            cell.CreatorName.textColor = UIColor.white
+            cell.TLListMemberCount.textColor = UIColor.white
+        }
+       
+            
         return cell
+        
     }
     
 
     @IBAction func btnCreateList(_ sender: Any) {
         self.performSegue(withIdentifier: "CreateListSegue", sender: nil)
     }
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         TVLists.delegate=self
@@ -66,11 +87,36 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
                 self.TVLists.reloadData()
             }
         }
-        
-
-       
-        
+    
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let modeValue = defaults.double (forKey: "myInt")
+        if (modeValue == 0)
+        {
+            self.view.backgroundColor = UIColor.white
+            titleLabel.textColor = UIColor.black
+            self.TVLists.backgroundColor = UIColor.white
+           
+           
+         
+        }
+        if (modeValue == 1)
+        {
+            self.view.backgroundColor = UIColor.black
+            titleLabel.textColor = UIColor.white
+            self.TVLists.backgroundColor = UIColor.black
+          
+            
+          
+
+            
+        }
+        self.TVLists.reloadData()
+    }
+    
+    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

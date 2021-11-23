@@ -7,6 +7,7 @@
 
 import UIKit
 import Parse
+import AlamofireImage
 
 class SettingsViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
@@ -75,8 +76,11 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
        // let user2 = userinfo["Password"] as! PFUser
         //passwordLabel.text = user2.password
         let imageFile = user["ProfilePicture"] as! PFFileObject
+        let password = user["Password"]
+       
         let urlString = imageFile.url!
         let url = URL(string: urlString)
+        
         
         profileImage.af_setImage(withURL: url!)
         
@@ -161,7 +165,22 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
 
     }
     
-    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let user = PFUser()
+        let image=info[.editedImage] as! UIImage
+        
+        let size=CGSize(width: 300, height: 300)
+        let scaledimage=image.af_imageScaled(to: size)
+        
+        profileImage.image=scaledimage
+        
+        let imagedata=profileImage.image!.pngData()
+        let file=PFFileObject(name: "image.png", data: imagedata!)
+        
+        user["ProfilePicture"] = file   //can set this before saving to parse
+        
+        dismiss(animated: true, completion: nil)
+    }
 
     
     @IBAction func LogOff(_ sender: Any) {

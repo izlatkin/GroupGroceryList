@@ -62,6 +62,9 @@ class ChangeUsernameViewController: UIViewController {
     @IBAction func ChangeUsername(_ sender: UIButton) {
         let user = userinfo["Username"] as! PFUser
         user.username = newUsernameField.text
+        print (user.username)
+        userinfo["Username"] = user.username
+       // PFUser.current() = userinfo["Username"] as! PFUser
 
         
     }

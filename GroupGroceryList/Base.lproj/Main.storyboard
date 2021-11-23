@@ -444,6 +444,7 @@
                     <connections>
                         <outlet property="TFListName" destination="4rY-Nw-Ybv" id="Ef2-fE-dNt"/>
                         <outlet property="btnSubmitListName" destination="YxP-Zn-kXX" id="UHm-mu-vFc"/>
+                        <outlet property="titleLabel" destination="InQ-Eh-CEj" id="hSx-94-XVf"/>
                         <segue destination="Gj0-PX-ufa" kind="presentation" identifier="AddUsersToListSegue" id="GMz-WD-yUG"/>
                     </connections>
                 </viewController>
@@ -532,6 +533,7 @@
                     <navigationItem key="navigationItem" id="4Ar-uo-0eO"/>
                     <connections>
                         <outlet property="TVLists" destination="Jy7-xb-iwg" id="Tcc-YS-rVy"/>
+                        <outlet property="titleLabel" destination="tjF-ZS-Gn4" id="nXP-p9-Bks"/>
                         <segue destination="b3b-5D-PPz" kind="presentation" identifier="CreateListSegue" id="8px-mg-b0w"/>
                     </connections>
                 </viewController>

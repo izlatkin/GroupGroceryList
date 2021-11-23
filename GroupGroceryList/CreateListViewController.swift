@@ -9,6 +9,7 @@ import UIKit
 
 class CreateListViewController: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var btnSubmitListName: UIButton!
     
@@ -42,6 +43,26 @@ class CreateListViewController: UIViewController {
         btnSubmitListName.isHidden = true
 
         // Do any additional setup after loading the view.
+    }
+    let defaults = UserDefaults.standard
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let modeValue = defaults.double (forKey: "myInt")
+        if (modeValue == 0)
+        {
+            self.view.backgroundColor = UIColor.white
+            titleLabel.textColor = UIColor.black
+         
+        }
+        if (modeValue == 1)
+        {
+            self.view.backgroundColor = UIColor.black
+            titleLabel.textColor = UIColor.white
+          
+            
+            
+            
+        }
     }
     
 
