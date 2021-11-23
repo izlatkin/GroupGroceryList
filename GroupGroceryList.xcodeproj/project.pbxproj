@@ -22,6 +22,8 @@
 		688829DF27396F3500913D7B /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688829DE27396F3500913D7B /* MyProfileViewController.swift */; };
 		688829E127396F6B00913D7B /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688829E027396F6B00913D7B /* GroupCell.swift */; };
 		689CD454274C418A00F4AF99 /* ChangeUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689CD453274C418A00F4AF99 /* ChangeUsernameViewController.swift */; };
+		689CD456274C9AD800F4AF99 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689CD455274C9AD800F4AF99 /* ChangePasswordViewController.swift */; };
+		689CD458274C9C5900F4AF99 /* ChangeNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689CD457274C9C5900F4AF99 /* ChangeNameViewController.swift */; };
 		68E921D927448F7700631621 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E921D827448F7700631621 /* SettingsViewController.swift */; };
 		D2116D872741C77600CB44D9 /* EachListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2116D862741C77600CB44D9 /* EachListCell.swift */; };
 		D26B02A32734AE0D006616D3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B02A22734AE0D006616D3 /* LoginViewController.swift */; };
@@ -72,6 +74,8 @@
 		688829DE27396F3500913D7B /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		688829E027396F6B00913D7B /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		689CD453274C418A00F4AF99 /* ChangeUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUsernameViewController.swift; sourceTree = "<group>"; };
+		689CD455274C9AD800F4AF99 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		689CD457274C9C5900F4AF99 /* ChangeNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameViewController.swift; sourceTree = "<group>"; };
 		68E921D827448F7700631621 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9A84E3A4424109363DAF3FA7 /* Pods-GroupGroceryList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroupGroceryList.release.xcconfig"; path = "Target Support Files/Pods-GroupGroceryList/Pods-GroupGroceryList.release.xcconfig"; sourceTree = "<group>"; };
 		D2116D862741C77600CB44D9 /* EachListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EachListCell.swift; sourceTree = "<group>"; };
@@ -158,6 +162,8 @@
 				D2116D862741C77600CB44D9 /* EachListCell.swift */,
 				68E921D827448F7700631621 /* SettingsViewController.swift */,
 				689CD453274C418A00F4AF99 /* ChangeUsernameViewController.swift */,
+				689CD455274C9AD800F4AF99 /* ChangePasswordViewController.swift */,
+				689CD457274C9C5900F4AF99 /* ChangeNameViewController.swift */,
 			);
 			path = GroupGroceryList;
 			sourceTree = "<group>";
@@ -376,7 +382,9 @@
 				D26B02AD2736FA78006616D3 /* CreateListViewController.swift in Sources */,
 				298C4BBB273830A1009EA9CC /* ItemCell.swift in Sources */,
 				2932B609274B6FB2001C4629 /* EditItemCell.swift in Sources */,
+				689CD456274C9AD800F4AF99 /* ChangePasswordViewController.swift in Sources */,
 				D2116D872741C77600CB44D9 /* EachListCell.swift in Sources */,
+				689CD458274C9C5900F4AF99 /* ChangeNameViewController.swift in Sources */,
 				D26B02A72735F5A6006616D3 /* HomeViewController.swift in Sources */,
 				2932B607274B575F001C4629 /* MyListViewController.swift in Sources */,
 				D26B02A32734AE0D006616D3 /* LoginViewController.swift in Sources */,

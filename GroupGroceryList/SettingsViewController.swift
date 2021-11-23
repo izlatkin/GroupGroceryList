@@ -71,6 +71,8 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
                    basicPasswordLabel.textColor = UIColor.black
                    basicNameLabel.textColor = UIColor.black
                    
+                   
+                   
                }
                if (modeValue == 1)
                {
@@ -83,7 +85,7 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
                    basicUserLabel.textColor = UIColor.white
                    basicPasswordLabel.textColor = UIColor.white
                    basicNameLabel.textColor = UIColor.white
-                   
+                 
                }
     }
 

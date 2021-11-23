@@ -662,6 +662,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="3HJ-dk-6pK" kind="relationship" relationship="viewControllers" id="9Wh-bC-t6q"/>
@@ -811,10 +812,10 @@
             </objects>
             <point key="canvasLocation" x="2765" y="1732"/>
         </scene>
-        <!--View Controller-->
+        <!--Change Password View Controller-->
         <scene sceneID="bha-zu-fbZ">
             <objects>
-                <viewController id="5ca-1A-1aL" sceneMemberID="viewController">
+                <viewController id="5ca-1A-1aL" customClass="ChangePasswordViewController" customModule="GroupGroceryList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KRL-GF-Grp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -861,15 +862,23 @@
                         <viewLayoutGuide key="safeArea" id="9Zr-xg-gDg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="newPasswordField" destination="G7E-27-Wrw" id="o4v-g8-hia"/>
+                        <outlet property="newPasswordLabel" destination="V3B-aF-k0K" id="Lr1-xF-HEo"/>
+                        <outlet property="oldPasswordField" destination="E9l-Sb-cfB" id="CYh-bT-BhV"/>
+                        <outlet property="oldPasswordLabel" destination="4lg-EP-Q7z" id="Fhz-h3-5YV"/>
+                        <outlet property="submitButton" destination="e5n-w0-0C2" id="B7X-yZ-Xco"/>
+                        <outlet property="titleLabel" destination="djd-EF-Eko" id="u3G-WL-aNK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KnN-OI-g7b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4522" y="2547"/>
         </scene>
-        <!--View Controller-->
+        <!--Change Name View Controller-->
         <scene sceneID="t55-Ay-9iy">
             <objects>
-                <viewController id="L4R-ml-rZN" sceneMemberID="viewController">
+                <viewController id="L4R-ml-rZN" customClass="ChangeNameViewController" customModule="GroupGroceryList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fNs-g2-pN5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -902,13 +911,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIE-qU-5Fh">
-                                <rect key="frame" x="162" y="321" width="0.0" height="0.0"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hKP-JJ-Hyr">
                                 <rect key="frame" x="159" y="317" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -924,15 +926,23 @@
                         <viewLayoutGuide key="safeArea" id="agt-LA-Sk6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="currentName" destination="Oat-cm-to5" id="E6l-MV-tbk"/>
+                        <outlet property="currentNameLabel" destination="H3Y-du-cWg" id="Wgi-ta-lmj"/>
+                        <outlet property="newNameField" destination="hKP-JJ-Hyr" id="G9l-3i-krf"/>
+                        <outlet property="newNameLabel" destination="gX2-Bd-ZYQ" id="0cT-uq-WCh"/>
+                        <outlet property="submitButton" destination="y0T-fw-BIM" id="G5D-Us-vsu"/>
+                        <outlet property="titleLabel" destination="q4X-nE-6ar" id="NUi-VS-FGL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ywH-Yo-5Rt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5211.594202898551" y="2546.6517857142858"/>
         </scene>
-        <!--View Controller-->
+        <!--Change Username View Controller-->
         <scene sceneID="Z9y-4j-Rrb">
             <objects>
-                <viewController id="aTR-6O-ZzU" sceneMemberID="viewController">
+                <viewController id="aTR-6O-ZzU" customClass="ChangeUsernameViewController" customModule="GroupGroceryList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DHJ-Fg-MHp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -980,16 +990,24 @@
                         <viewLayoutGuide key="safeArea" id="Imi-Le-8BP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="currentUsername" destination="NkL-2w-Ro1" id="o0W-tZ-8F3"/>
+                        <outlet property="currentUsernameLabel" destination="LlR-EY-zUF" id="VWR-cX-ZRk"/>
+                        <outlet property="newUsernameField" destination="T7c-dG-Ukr" id="t5w-9Y-8nj"/>
+                        <outlet property="newUsernameLabel" destination="Btc-9o-XUh" id="YgO-uL-oUy"/>
+                        <outlet property="submitButton" destination="xWO-Ys-mk5" id="EXC-Im-KLc"/>
+                        <outlet property="titleLabel" destination="lZA-Gx-Tkq" id="SKS-7v-VXs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QqV-jw-uxo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3830" y="2547"/>
         </scene>
-        <!--Item-->
+        <!--Settings-->
         <scene sceneID="lhR-Rd-HMn">
             <objects>
                 <navigationController modalPresentationStyle="fullScreen" id="Sju-Vc-XJQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="L11-R9-2ip"/>
+                    <tabBarItem key="tabBarItem" title="Settings" id="L11-R9-2ip"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NSA-hl-RaT">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1109,11 +1127,12 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4Eg-Oi-tUb">
                                 <rect key="frame" x="157" y="709" width="101" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1415140033" green="0.61964124440000001" blue="0.94906181099999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <segments>
                                     <segment title="Light"/>
                                     <segment title="Dark"/>
                                 </segments>
-                                <color key="selectedSegmentTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="ColorChanger:" destination="Z8t-9A-yaH" eventType="valueChanged" id="Zf5-h9-LUG"/>
                                 </connections>
