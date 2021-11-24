@@ -8,7 +8,12 @@
 import UIKit
 
 class GroupCell: UITableViewCell {
+    
 
+    @IBOutlet weak var groupNameLabel: UILabel!
+    
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var groupListLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

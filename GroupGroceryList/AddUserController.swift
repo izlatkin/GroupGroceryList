@@ -11,6 +11,8 @@ import Parse
 class AddUserController: UIViewController, UITableViewDataSource,UITableViewDelegate {
     
     //COULD NOT LOOK UP PARSE OBJECTS DIRECTLY in Arrays, USED DICTIONARY OF USERNAMES for tracking which accounts added
+    let defaults = UserDefaults.standard
+
     
     var UserList:[PFObject]=[]          //displays search results
     var AddedUserList:[PFObject]=[]     //where users are actually added
@@ -137,6 +139,20 @@ class AddUserController: UIViewController, UITableViewDataSource,UITableViewDele
             
             cell.configure(with: user )
             cell.delegate = self
+            let modeValue = defaults.double (forKey: "myInt")
+            if (modeValue == 0)
+            {
+                cell.contentView.backgroundColor = UIColor.white
+                cell.TLUserName.textColor = UIColor.black
+                
+            }
+            if (modeValue == 1)
+            {
+                cell.contentView.backgroundColor = UIColor.black
+                cell.TLUserName.textColor = UIColor.white
+               
+            }
+           
             return cell
         }
         else{
@@ -158,11 +174,53 @@ class AddUserController: UIViewController, UITableViewDataSource,UITableViewDele
             }
                 
             cell.ivProfilePic.af_setImage(withURL: url)
+            let modeValue = defaults.double (forKey: "myInt")
+            if (modeValue == 0)
+            {
+                cell.contentView.backgroundColor = UIColor.white
+                cell.TLusername.textColor = UIColor.black
+                
+            }
+            if (modeValue == 1)
+            {
+                cell.contentView.backgroundColor = UIColor.black
+                cell.TLusername.textColor = UIColor.white
+               
+            }
             
             return cell
         }
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let modeValue = defaults.double (forKey: "myInt")
+        if (modeValue == 0)
+        {
+            self.view.backgroundColor = UIColor.white
+            TLlistname.textColor = UIColor.black
+            self.TVUsers.backgroundColor = UIColor.white
+            self.TVAddedUsers.backgroundColor = UIColor.white
+           
+         
+        }
+        if (modeValue == 1)
+        {
+            self.view.backgroundColor = UIColor.black
+            
+            self.TVUsers.backgroundColor = UIColor.black
+            self.TVAddedUsers.backgroundColor = UIColor.black
+            TLlistname.textColor = UIColor.white
+          
+            
+          
+
+            
+        }
+        self.TVUsers.reloadData()
+        self.TVAddedUsers.reloadData()
+    }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        //not needed

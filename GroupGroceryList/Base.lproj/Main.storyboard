@@ -398,6 +398,7 @@
                     <connections>
                         <outlet property="itemSearchTextField" destination="29m-N1-Fuo" id="gJu-TY-jqN"/>
                         <outlet property="itemsTableView" destination="ZaD-hE-e3I" id="f4z-nt-7SZ"/>
+                        <outlet property="titleLabel" destination="2ui-0T-b7Y" id="Ur0-j0-NVR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M7c-MW-edZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -676,11 +677,11 @@
             </objects>
             <point key="canvasLocation" x="2681" y="47"/>
         </scene>
-        <!--Item-->
+        <!--My Profile-->
         <scene sceneID="VJy-7h-8Zb">
             <objects>
                 <navigationController modalPresentationStyle="fullScreen" id="iw9-79-zC9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="9Q2-zf-e9t"/>
+                    <tabBarItem key="tabBarItem" title="My Profile" id="9Q2-zf-e9t"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NdC-Rx-Gxr">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -693,11 +694,11 @@
             </objects>
             <point key="canvasLocation" x="2786" y="879"/>
         </scene>
-        <!--Item-->
+        <!--My Lists-->
         <scene sceneID="Ygw-eD-tbc">
             <objects>
                 <navigationController storyboardIdentifier="FeedNavController" automaticallyAdjustsScrollViewInsets="NO" id="3HJ-dk-6pK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="akm-jY-ucH"/>
+                    <tabBarItem key="tabBarItem" title="My Lists" id="akm-jY-ucH"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="t25-5t-w6T">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -796,19 +797,32 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addButton" destination="cIe-gv-P7r" id="xc9-V0-blx"/>
+                                            <outlet property="groupListLabel" destination="E8i-PL-Qb0" id="l2c-30-mKD"/>
+                                            <outlet property="groupNameLabel" destination="f87-ZR-0o8" id="v2K-3y-XVj"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9H-Gy-hSC">
                                 <rect key="frame" x="357" y="55" width="44" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="+"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ogu-IJ-cea"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="hpe-hg-y8e"/>
+                    <connections>
+                        <outlet property="displayNameLabel" destination="Iys-G3-Pax" id="OqB-nv-pxV"/>
+                        <outlet property="groupLabel" destination="rAf-uk-GhC" id="Pb8-rV-zPS"/>
+                        <outlet property="groupTV" destination="HG9-DJ-CJR" id="xQj-PD-14K"/>
+                        <outlet property="newLabel" destination="vQq-s6-3Kh" id="J7d-R4-3dv"/>
+                        <outlet property="profilePicture" destination="9X6-bD-13y" id="dvK-3h-WCf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gUb-xk-tJN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -819,7 +833,7 @@
             <objects>
                 <viewController id="5ca-1A-1aL" customClass="ChangePasswordViewController" customModule="GroupGroceryList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KRL-GF-Grp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Old Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lg-EP-Q7z">
@@ -949,7 +963,7 @@
             <objects>
                 <viewController id="aTR-6O-ZzU" customClass="ChangeUsernameViewController" customModule="GroupGroceryList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DHJ-Fg-MHp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LlR-EY-zUF">
@@ -1040,26 +1054,6 @@
                                 <rect key="frame" x="47" y="133" width="93" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZPw-f6-Ae5">
-                                <rect key="frame" x="332" y="322" width="79" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Change"/>
-                                <connections>
-                                    <segue destination="aTR-6O-ZzU" kind="popoverPresentation" popoverAnchorView="ZPw-f6-Ae5" id="1Us-rP-hnA">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOo-1A-fG4">
-                                <rect key="frame" x="332" y="413" width="79" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Change"/>
-                                <connections>
-                                    <segue destination="5ca-1A-1aL" kind="popoverPresentation" popoverAnchorView="GOo-1A-fG4" id="JcT-i6-c7r">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZIy-Dw-y3c">
                                 <rect key="frame" x="45" y="357" width="108" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1179,9 +1173,7 @@
                         <outlet property="basicPasswordLabel" destination="geg-rN-2Tf" id="zLf-k1-fFZ"/>
                         <outlet property="basicUserLabel" destination="ZIy-Dw-y3c" id="WxG-ps-Mwr"/>
                         <outlet property="changeName" destination="cOU-a2-9zK" id="K06-QE-5AY"/>
-                        <outlet property="changePassword" destination="GOo-1A-fG4" id="Y75-eV-jbr"/>
                         <outlet property="changePicture" destination="HsK-eJ-b4s" id="sc1-30-86T"/>
-                        <outlet property="changeUsername" destination="ZPw-f6-Ae5" id="OJh-UB-nXa"/>
                         <outlet property="clearLabel" destination="Mb6-D9-JFt" id="3lz-EY-W61"/>
                         <outlet property="displayName" destination="TBy-Qx-8ha" id="zwx-gO-UlC"/>
                         <outlet property="nameLabel" destination="I5D-XV-2xb" id="av6-SS-nfi"/>

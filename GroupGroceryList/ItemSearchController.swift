@@ -12,10 +12,11 @@ import CryptoKit
 
 class ItemSearchController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var rawItems = [[String:Any]]()
-    
+    let defaults = UserDefaults.standard
 //    @IBOutlet weak var itemSearchTextField: UITextField!
 //    @IBOutlet weak var itemsTableView: UITableView!
     
+    @IBOutlet weak var titleLabel: UILabel!
     var username = ""
     var currentListName = ""
     public var currentListID = ""
@@ -79,9 +80,53 @@ class ItemSearchController: UIViewController, UITableViewDataSource, UITableView
         cell.isAdded = false
         
         cell.delegate = self
+        let modeValue = defaults.double (forKey: "myInt")
+        if (modeValue == 0)
+        {
+            cell.contentView.backgroundColor = UIColor.white
+            cell.ItemName.textColor = UIColor.black
+            cell.DescriptionLabble.textColor = UIColor.black
+            
+        }
+        if (modeValue == 1)
+        {
+            cell.contentView.backgroundColor = UIColor.black
+            cell.DescriptionLabble.textColor = UIColor.white
+            cell.ItemName.textColor = UIColor.white
+            
+        }
+       
+        
         
         return cell
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let modeValue = defaults.double (forKey: "myInt")
+        if (modeValue == 0)
+        {
+            self.view.backgroundColor = UIColor.white
+            titleLabel.textColor = UIColor.black
+            self.itemsTableView.backgroundColor = UIColor.white
+           
+           
+         
+        }
+        if (modeValue == 1)
+        {
+            self.view.backgroundColor = UIColor.black
+            titleLabel.textColor = UIColor.white
+            self.itemsTableView.backgroundColor = UIColor.black
+          
+            
+          
+
+            
+        }
+        self.itemsTableView.reloadData()
+    }
+    
+    
     
     @IBAction func SearchItem(_ sender: Any) {
         print("searching for item \(String(describing: itemSearchTextField.text))")
@@ -144,6 +189,7 @@ class ItemSearchController: UIViewController, UITableViewDataSource, UITableView
         dataTask.resume()
     }
 }
+
 
 
 extension UIViewController: ItemCellDelegate{

@@ -73,10 +73,9 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
      
         let user = userinfo["Username"] as! PFUser
         usernameLabel.text = user.username
-       // let user2 = userinfo["Password"] as! PFUser
-        //passwordLabel.text = user2.password
+      
         let imageFile = user["ProfilePicture"] as! PFFileObject
-        let password = user["Password"]
+      
        
         let urlString = imageFile.url!
         let url = URL(string: urlString)
