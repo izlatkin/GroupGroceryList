@@ -15,6 +15,10 @@ class ItemSearchController: UIViewController, UITableViewDataSource, UITableView
     let defaults = UserDefaults.standard
 //    @IBOutlet weak var itemSearchTextField: UITextField!
 //    @IBOutlet weak var itemsTableView: UITableView!
+    @IBAction func DoneGoHome(_ sender: Any) {
+        print("List Done")
+        self.performSegue(withIdentifier: "ItemSeachToHome", sender: nil)
+    }
     
     @IBOutlet weak var titleLabel: UILabel!
     var username = ""

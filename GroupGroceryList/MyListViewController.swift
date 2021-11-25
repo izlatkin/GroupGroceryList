@@ -22,6 +22,16 @@ class MyListViewController: UIViewController,  UITableViewDataSource, UITableVie
     @IBOutlet weak var CreatedBy: UILabel!
     var currentListID = ""
 
+    @IBAction func AddItemsTop(_ sender: Any) {
+        print("More Items To")
+        self.performSegue(withIdentifier: "AddItemsFromMyList", sender: nil)
+    }
+    
+    
+    @IBAction func AddItemsBottom(_ sender: Any) {
+        print("More Items Bottom")
+        self.performSegue(withIdentifier: "AddItemsFromMyList", sender: nil)
+    }
     
 
     override func viewDidLoad() {
