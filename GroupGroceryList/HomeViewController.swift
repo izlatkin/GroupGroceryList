@@ -15,10 +15,16 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
     
     @IBOutlet weak var titleLabel: UILabel!
     
+    @IBOutlet weak var btnNotificationBell: UIBarButtonItem!
+    
+    
+    
+    
     var AllShoppingList:[PFObject]=[]
     var AllMyLists:[PFObject]=[]
     var MyListsMemberCount:[Int]=[]
     var CreatorNames:[String]=[]
+    var ListNotifications:[PFObject]=[]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return AllMyLists.count
@@ -52,10 +58,25 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
         
     }
     
-
-    @IBAction func btnCreateList(_ sender: Any) {
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+  //      if segue.destination is NotificationsController{
+  //          let VC = segue.destination as? NotificationsController
+   //         VC?.AddedToListNotifications = ListNotifications
+   //     }
+//    }
+    
+    @IBAction func btnSeeNotifications(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "SeeNotificationsSegue", sender: nil)
+        
+    }
+    
+    @IBAction func btnCreateNewList(_ sender: Any) {
         self.performSegue(withIdentifier: "CreateListSegue", sender: nil)
     }
+    
+    
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,10 +108,14 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
                 self.TVLists.reloadData()
             }
         }
-    
+        
+        
+        
+        
+        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {        //runs everytime screen loads
         super.viewWillAppear(animated)
         let modeValue = defaults.double (forKey: "myInt")
         if (modeValue == 0)
@@ -114,12 +139,38 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
             
         }
         self.TVLists.reloadData()
+        
+        //querying and checking for notifications below
+        self.btnNotificationBell.setBackgroundImage(UIImage(named:"thisbell"), for: UIControl.State.normal, barMetrics: UIBarMetrics.default)
+        let NotificationQuery = PFQuery(className: "AddedToListNotification")
+        NotificationQuery.whereKey("ReceiverID", contains: PFUser.current()?.objectId)
+        NotificationQuery.findObjectsInBackground { List, Error in
+            
+            self.ListNotifications = List!  //if null in next VC, won't load anything
+            if List != nil {
+                    for notification in self.ListNotifications{
+                        if (notification["ReceiverHasRead"] as! Bool == false){
+                            self.btnNotificationBell.setBackgroundImage(UIImage(named:"thisbelldot"), for: UIControl.State.normal, barMetrics: UIBarMetrics.default)
+                        }
+                        
+                    }
+            }
+            
+        }
+        
     }
     
     
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.destination is NotificationsViewController{
+                  let VC = segue.destination as? NotificationsViewController
+                  VC?.AddedToListNotifications = ListNotifications
+              }
+        
+        
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         print("Loading up the details screen")
@@ -152,6 +203,7 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
     }
     
 
+    
    
 
 }

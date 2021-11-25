@@ -26,6 +26,8 @@
 		689CD458274C9C5900F4AF99 /* ChangeNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689CD457274C9C5900F4AF99 /* ChangeNameViewController.swift */; };
 		68E921D927448F7700631621 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E921D827448F7700631621 /* SettingsViewController.swift */; };
 		D2116D872741C77600CB44D9 /* EachListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2116D862741C77600CB44D9 /* EachListCell.swift */; };
+		D2116D89274EF5E500CB44D9 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2116D88274EF5E500CB44D9 /* NotificationsViewController.swift */; };
+		D2116D8B274EFB1A00CB44D9 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2116D8A274EFB1A00CB44D9 /* NotificationCell.swift */; };
 		D26B02A32734AE0D006616D3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B02A22734AE0D006616D3 /* LoginViewController.swift */; };
 		D26B02A52734C1EB006616D3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B02A42734C1EB006616D3 /* SignUpViewController.swift */; };
 		D26B02A72735F5A6006616D3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B02A62735F5A6006616D3 /* HomeViewController.swift */; };
@@ -79,6 +81,8 @@
 		68E921D827448F7700631621 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9A84E3A4424109363DAF3FA7 /* Pods-GroupGroceryList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroupGroceryList.release.xcconfig"; path = "Target Support Files/Pods-GroupGroceryList/Pods-GroupGroceryList.release.xcconfig"; sourceTree = "<group>"; };
 		D2116D862741C77600CB44D9 /* EachListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EachListCell.swift; sourceTree = "<group>"; };
+		D2116D88274EF5E500CB44D9 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		D2116D8A274EFB1A00CB44D9 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		D26B02A22734AE0D006616D3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D26B02A42734C1EB006616D3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D26B02A62735F5A6006616D3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 				689CD453274C418A00F4AF99 /* ChangeUsernameViewController.swift */,
 				689CD455274C9AD800F4AF99 /* ChangePasswordViewController.swift */,
 				689CD457274C9C5900F4AF99 /* ChangeNameViewController.swift */,
+				D2116D88274EF5E500CB44D9 /* NotificationsViewController.swift */,
+				D2116D8A274EFB1A00CB44D9 /* NotificationCell.swift */,
 			);
 			path = GroupGroceryList;
 			sourceTree = "<group>";
@@ -389,6 +395,8 @@
 				2932B607274B575F001C4629 /* MyListViewController.swift in Sources */,
 				D26B02A32734AE0D006616D3 /* LoginViewController.swift in Sources */,
 				688829DF27396F3500913D7B /* MyProfileViewController.swift in Sources */,
+				D2116D8B274EFB1A00CB44D9 /* NotificationCell.swift in Sources */,
+				D2116D89274EF5E500CB44D9 /* NotificationsViewController.swift in Sources */,
 				68E921D927448F7700631621 /* SettingsViewController.swift in Sources */,
 				688829E127396F6B00913D7B /* GroupCell.swift in Sources */,
 				295D1F31272073AD00D23887 /* AppDelegate.swift in Sources */,

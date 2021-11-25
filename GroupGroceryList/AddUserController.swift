@@ -5,6 +5,8 @@
 //  Created by Greg Garman on 11/5/21.
 //
 
+//observation-to get an objectid in a list with for loop, it has a built in dot operator .objectid, trying to index in like ["username"] will give nil
+
 import UIKit
 import Parse
 
@@ -19,6 +21,7 @@ class AddUserController: UIViewController, UITableViewDataSource,UITableViewDele
     var listname = ""
     var UsersAdded:[String: PFObject]=[:]       //for tracking which users had been added
     let Me = PFUser.current()
+    
     
     
     @IBOutlet weak var TLlistname: UILabel!
@@ -37,11 +40,24 @@ class AddUserController: UIViewController, UITableViewDataSource,UITableViewDele
         NewList["CreatorName"] = PFUser.current()?["username"]
         NewList.saveInBackground { success, Error in
             if success{
+             
+                //send notifications if success,then segue
+                for person in self.AddedUserList{
+                    if person["username"] as! String != self.Me!["username"] as! String{
+                        let notification = PFObject(className: "AddedToListNotification")
+                        notification["ReceiverHasRead"] = false
+                        notification["SenderName"] = PFUser.current()?["username"]
+                        notification["SenderProfilePic"] = PFUser.current()?["ProfilePicture"]
+                        notification["ReceiverID"] =  person.objectId!
+                        notification.saveEventually()
+                    }
+                }
                 self.performSegue(withIdentifier: "ItemSearchSegue", sender: nil)
             }
             else{
                 print("failed to save new list")
             }
+            
         }
         
         
