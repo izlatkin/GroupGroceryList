@@ -11,6 +11,9 @@ import CryptoKit
 
 
 class ItemSearchController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    public var cellDict: [IndexPath: Bool] = [:]
+    
     var rawItems = [[String:Any]]()
     let defaults = UserDefaults.standard
 //    @IBOutlet weak var itemSearchTextField: UITextField!
@@ -81,7 +84,6 @@ class ItemSearchController: UIViewController, UITableViewDataSource, UITableView
         let imageURL_string = rawItems[indexPath.row]["imageUrl"] as! String
         var imageURL = URL(string: imageURL_string )
         cell.ImageOfItem.af_setImage(withURL: imageURL!)
-        cell.isAdded = false
         
         cell.delegate = self
         let modeValue = defaults.double (forKey: "myInt")
@@ -99,8 +101,21 @@ class ItemSearchController: UIViewController, UITableViewDataSource, UITableView
             cell.ItemName.textColor = UIColor.white
             
         }
-       
-        
+        if let value = cellDict[indexPath] {
+            if value {
+                cell.ItemCellAddbuttom.setTitle("Remove", for: .normal)
+                cell.ItemCellAddbuttom.setTitleColor(UIColor.gray, for: .normal)
+                cell.isAdded = true
+            }else{
+                cell.ItemCellAddbuttom.setTitle("Add", for: .normal)
+                cell.ItemCellAddbuttom.setTitleColor(UIColor.blue, for: .normal)
+                cell.isAdded = false
+            }
+        } else{
+            cell.ItemCellAddbuttom.setTitle("Add", for: .normal)
+            cell.ItemCellAddbuttom.setTitleColor(UIColor.blue, for: .normal)
+            cell.isAdded = false
+        }
         
         return cell
     }
@@ -196,10 +211,13 @@ class ItemSearchController: UIViewController, UITableViewDataSource, UITableView
 
 
 
-extension UIViewController: ItemCellDelegate{
+extension ItemSearchController: ItemCellDelegate{
     func AddItem(with cell: ItemCell) {
+        guard let indexPath = itemsTableView.indexPath(for: cell) else { return }
+        
         let defaults = UserDefaults.standard
         let ListID = defaults.string(forKey: "currentListID") ?? ""
+        
         if (!cell.isAdded){
             print("ItemName: \(cell.ItemName.text)")
             print("DescriptionLabble: \(cell.DescriptionLabble.text)")
@@ -226,6 +244,7 @@ extension UIViewController: ItemCellDelegate{
             cell.ItemCellAddbuttom.setTitle("Remove", for: .normal)
             cell.ItemCellAddbuttom.setTitleColor(UIColor.gray, for: .normal)
             cell.isAdded = true
+            cellDict[indexPath] = true
         }else{
             print("delete ItemName: \(cell.ItemName.text)")
 //            let post = PFObject(className: "ItemsTable")
@@ -253,6 +272,7 @@ extension UIViewController: ItemCellDelegate{
             cell.ItemCellAddbuttom.setTitle("Add", for: .normal)
             cell.ItemCellAddbuttom.setTitleColor(UIColor.blue, for: .normal)
             cell.isAdded = false
+            cellDict[indexPath] = false
         }
         
     }
