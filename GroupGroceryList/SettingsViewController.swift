@@ -23,9 +23,10 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
     @IBOutlet weak var profileImage: UIImageView!
    
     @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var changeUsername: UIButton!
+  
     @IBOutlet weak var passwordLabel: UILabel!
-    @IBOutlet weak var changePassword: UIButton!
+ 
+    @IBOutlet weak var changeUsername: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var changeName: UIButton!
    
@@ -64,7 +65,7 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
         let modeValue = defaults.double(forKey: "myInt")
       
                viewMode.selectedSegmentIndex = Int(modeValue)
-        
+   
         
         let userinfo = PFObject(className: "UserInfo")
         userinfo["Username"] = PFUser.current()!
@@ -74,7 +75,8 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
         let user = userinfo["Username"] as! PFUser
         usernameLabel.text = user.username
       
-        let imageFile = user["ProfilePicture"] as! PFFileObject
+        
+       let imageFile = user["ProfilePicture"] as! PFFileObject
       
        
         let urlString = imageFile.url!
