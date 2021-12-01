@@ -29,10 +29,10 @@ An app that allows users to add members to a group, create shared grocery lists,
 
 **Required Must-have Stories**
 
-- [ ] Users can search a grocery API and add items to their personal list and mutually shared lists.
+- [x] Users can search a grocery API and add items to their personal list and mutually shared lists.
 - [x] Users can create a profile and add other app users to a group in which a mutually shared grocery list is present.
-- [ ] Grocery items can be added, removed, and notes/comments can be added for each item.
-- [ ] As user shops, can move collected items to a separate list to differentiate between items that still need to be collected.
+- [x] Grocery items can be added, removed, and notes/comments can be added for each item.
+- [x] As user shops, can move collected items to a separate list to differentiate between items that still need to be collected.
  
 
 **Optional Nice-to-have Stories**
@@ -53,6 +53,12 @@ An app that allows users to add members to a group, create shared grocery lists,
 ### Settings and Profile Walkthrough (11/22/2021)
 <img src="https://github.com/izlatkin/GroupGroceryList/blob/main/iosgif1122.gif" width=250><br>
 
+### Final Walkthrough
+![ezgif com-gif-maker (7)](https://user-images.githubusercontent.com/88288108/144155106-fa8af23e-ed05-4952-825d-0fdfa16aface.gif)
+
+![ezgif com-gif-maker (8)](https://user-images.githubusercontent.com/88288108/144155167-06bbffb5-f74a-4672-8974-fdeda471e53b.gif)
+
+![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/88288108/144155231-aed7f175-d12e-4bf5-99af-296bae7eae46.gif)
 
 ### 2. Screen Archetypes
 
